@@ -27,35 +27,30 @@ curl -L https://github.com/jzbjyb/LPAQA/blob/master/TREx_train.tar.gz
 After downloading the dataset, you should first run the pretraining model by using the 
 once the model is trained
 ```bash
-python train.py \
-    --do_pretrain \
-    --do_eval \
-    --output_dir=$OUTPUT_DIR \
-    --train_dir=$TRAIN_DIR \
-    --valid_dir=$VALID_DIR \
-    --test_dir=$TEST_DIR \
-    --max_seq_length=20 \
-    --train_batch_size=64 \
-    --learning_rate=5e-4 \
-    --num_train_epochs=5000 \
-    --seed=42 \
- 
+python seq2seq_experiment.py \ 
+    --output_dir <OUT_DIR> \
+    --model_type bert_emb_identity_seq2seq \
+    --model_name bert-large-uncased  \  
+    --num_train_epochs 100 \  
+    --evaluate_during_training \  
+    --do_eval_test
 ``` 
 
-##### Command for pretraining BERTese
+##### Command for BERTese
 ```bash
-python train.py \
-    --do_train \
-    --output_dir=$OUTPUT_DIR \
-    --train_dir=$TRAIN_DIR \
-    --valid_dir=$VALID_DIR \
-    --test_dir=$TEST_DIR \
-    --max_seq_length=20 \
-    --do_train \
-    --train_batch_size=64 \
-    --learning_rate=5e-4 \
-    --num_train_epochs=10 \
-    --seed=42 
+python bertese_experiment.py \
+    --log_examples 
+    --evaluate_during_training 
+    --model_type bertese 
+    --train_batch_size 64 
+    --max_seq_length 20 
+    --do_train 
+    --explicit_mask_loss_weight 0 
+    --optimize_mask_softmin 
+    --lpaqa 
+    --num_train_epochs 20 
+    --evaluate_during_training 
+    --do_eval_dev 
 ```
     
 To train with automatic mixed-precision, install [apex](https://github.com/NVIDIA/apex/) and add the ```--fp16``` flag.
