@@ -58,16 +58,24 @@ To train with automatic mixed-precision, install [apex](https://github.com/NVIDI
 ## Citation
 
 If you find this work helpful, please cite us
-```
-@misc{haviv2021bertese,
-      title={BERTese: Learning to Speak to BERT}, 
-      author={Adi Haviv and Jonathan Berant and Amir Globerson},
-      year={2021},
-      eprint={2103.05327},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+```@inproceedings{haviv-etal-2021-bertese,
+    title = "{BERT}ese: Learning to Speak to {BERT}",
+    author = "Haviv, Adi  and
+      Berant, Jonathan  and
+      Globerson, Amir",
+    booktitle = "Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume",
+    month = apr,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.eacl-main.316",
+    doi = "10.18653/v1/2021.eacl-main.316",
+    pages = "3618--3623",
 }
 ```
+
+## Acknowledgements
+We would like to thank the European Research Council (ERC) for funding the project.
 
 This code is still improving. for any questions, please email adi.haviv@cs.tau.ac.il
 
