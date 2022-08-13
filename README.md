@@ -1,6 +1,6 @@
 # BERTese
 
-This repository contains the code for the models discussed in the paper "[BERTese: Learning to speck to BERT](https://arxiv.org/abs/2103.05327)".
+This repository contains the code for the models discussed in the paper "[BERTese: Learning to speak to BERT](https://arxiv.org/abs/2103.05327)".
 
 Our code, both pretraining and training, is based on PyTorch (1.4.0) and 
 Transformers (2.5.0). Note that all the dependencies and requirement file are provided in 
